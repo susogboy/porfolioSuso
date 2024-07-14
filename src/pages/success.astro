@@ -1,0 +1,45 @@
+---
+import { PROFESSIONALSUCCESS } from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+
+import { SUCCESS } from '../lib/constants'
+---
+
+<BaseLayout title={PROFESSIONALSUCCESS.TITLE} description={PROFESSIONALSUCCESS.DESCRIPTION}>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <h2
+        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        {PROFESSIONALSUCCESS.TITLE}
+      </h2>
+    </TopLayout>
+    <BottomLayout>
+      <ul>
+        {
+          SUCCESS.map((entry) => (
+            <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
+              <div class="text-2xl font-bold mb-2">{entry.title}</div> {/* Título más grande */}
+              <a
+                href={entry.link ?? ''}
+                class={`font-semibold underline ${entry?.link ? 'text-primary' : 'text-foreground'}`}
+              >
+                {entry.company}
+              </a>
+              <div class="mb-4 text-sm uppercase mt-2">
+                {entry.start} - {entry.end}
+              </div>
+              <article class="prose dark:prose-invert">
+                {entry.tasks.map((i) => (
+                  <>{i}</>
+                ))}
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </BottomLayout>
+  </main>
+</BaseLayout>

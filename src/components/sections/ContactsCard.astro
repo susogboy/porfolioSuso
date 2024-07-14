@@ -1,0 +1,27 @@
+---
+import Card from '../Card.astro'
+import { LINKS } from '../../lib/constants'
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4" class="flex justify-center">
+  <div class="flex flex-col justify-center max-w-xs p-4 h-full">
+    <header class="text-center mb-4">
+      <h1 class="text-xl font-bold text-foreground">
+        Let's work together!
+      </h1>
+    </header>
+    <address class="flex flex-col items-center">
+      <h2 class="text-gray-500">Contact</h2>
+      <p>jesus.fersan2003@gmail.com</p>
+      <p>🇪🇸 Madrid, España 🇪🇸</p>
+    </address>
+    <div class="mt-4">
+      <h2 class="text-gray-500">Socials</h2>
+      <ul>
+        <li><a href={LINKS.linkedin} target="_blank">Linkedin</a></li>
+        <li><a href={LINKS.github} target="_blank">Github</a></li>
+        <li><a href={LINKS.malt} target="_blank">Malt</a></li>
+      </ul>
+    </div>
+  </div>
+</Card>

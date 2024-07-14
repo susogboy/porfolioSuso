@@ -1,0 +1,31 @@
+---
+import Card from '../Card.astro'
+import { Button } from '../ui/button'
+import { SUCCESS } from '../../lib/constants'
+---
+
+<div class="mt-4">
+  <Card
+    colSpan="md:col-span-1"
+    rowSpan="md:row-span-2"
+    title="Professional Success"
+    href="/success"
+  >
+    <div class="flex h-full w-full flex-col">
+      <div>
+        <img
+          width="50"
+          height="50"
+          src="/copa.png"
+          class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[300px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
+          alt="trophy"
+        />
+      </div>
+      <div>
+        <p class="mt-2 text-sm text-muted-foreground">
+          View more
+        </p>
+      </div>
+    </div>
+  </Card>
+</div>
